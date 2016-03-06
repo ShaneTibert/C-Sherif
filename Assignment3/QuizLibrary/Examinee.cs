@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace QuizLibrary
 {
-    public class Class1
+    class Examinee
     {
+        int id;
+        string Name;
+        List<Quiz> Quizzes;
     }
 }
