@@ -32,6 +32,7 @@
             this.populateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.takeQuizToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.displayTakenQuizesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnCreateDatabase = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,11 +66,22 @@
             this.displayTakenQuizesToolStripMenuItem.Size = new System.Drawing.Size(127, 20);
             this.displayTakenQuizesToolStripMenuItem.Text = "Display taken Quizes";
             // 
+            // btnCreateDatabase
+            // 
+            this.btnCreateDatabase.Location = new System.Drawing.Point(13, 29);
+            this.btnCreateDatabase.Name = "btnCreateDatabase";
+            this.btnCreateDatabase.Size = new System.Drawing.Size(116, 23);
+            this.btnCreateDatabase.TabIndex = 1;
+            this.btnCreateDatabase.Text = "Create Database";
+            this.btnCreateDatabase.UseVisualStyleBackColor = true;
+            this.btnCreateDatabase.Click += new System.EventHandler(this.btnCreateDatabase_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(269, 26);
+            this.ClientSize = new System.Drawing.Size(269, 64);
+            this.Controls.Add(this.btnCreateDatabase);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
@@ -87,6 +99,7 @@
         private System.Windows.Forms.ToolStripMenuItem populateToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem takeQuizToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem displayTakenQuizesToolStripMenuItem;
+        private System.Windows.Forms.Button btnCreateDatabase;
     }
 }
 
