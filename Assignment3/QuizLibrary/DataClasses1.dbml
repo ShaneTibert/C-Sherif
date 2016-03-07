@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Quiz" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(localdb)\Projects;Initial Catalog=Quiz;Integrated Security=True;Connect Timeout=30" SettingsObjectName="QuizLibrary.Properties.Settings" SettingsPropertyName="QuizConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Options" Member="Options">
+    <Type Name="Option">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Txt" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CorrectAnswer" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="QuestionID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Question_Option" Member="Question" ThisKey="QuestionID" OtherKey="Id" Type="Question" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Examinee" Member="Examinees">
+    <Type Name="Examinee">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Association Name="Examinee_Quiz" Member="Quizs" ThisKey="Id" OtherKey="ExamineeID" Type="Quiz" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Question" Member="Questions">
+    <Type Name="Question">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="text" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="QuizID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Question_Option" Member="Options" ThisKey="Id" OtherKey="QuestionID" Type="Option" />
+      <Association Name="Quiz_Question" Member="Quiz" ThisKey="QuizID" OtherKey="Id" Type="Quiz" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Quiz" Member="Quizs">
+    <Type Name="Quiz">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Score" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Column Name="ExamineeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Quiz_Question" Member="Questions" ThisKey="Id" OtherKey="QuizID" Type="Question" />
+      <Association Name="Examinee_Quiz" Member="Examinee" ThisKey="ExamineeID" OtherKey="Id" Type="Examinee" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
