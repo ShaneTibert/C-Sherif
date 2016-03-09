@@ -1,5 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Quiz" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=(localdb)\Projects;Initial Catalog=Quiz;Integrated Security=True;Connect Timeout=30" SettingsObjectName="QuizLibrary.Properties.Settings" SettingsPropertyName="QuizConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\v11.0;AttachDbFilename=H:\Quiz.mdf;Integrated Security=True;Connect Timeout=30" SettingsObjectName="QuizLibrary.Properties.Settings" SettingsPropertyName="QuizConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Examinee" Member="Examinees">
+    <Type Name="Examinee">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Association Name="Examinee_Quiz" Member="Quizs" ThisKey="Id" OtherKey="ExamineeID" Type="Quiz" />
+    </Type>
+  </Table>
   <Table Name="dbo.Options" Member="Options">
     <Type Name="Option">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -9,16 +16,9 @@
       <Association Name="Question_Option" Member="Question" ThisKey="QuestionID" OtherKey="Id" Type="Question" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.Examinee" Member="Examinees">
-    <Type Name="Examinee">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Name" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
-      <Association Name="Examinee_Quiz" Member="Quizs" ThisKey="Id" OtherKey="ExamineeID" Type="Quiz" />
-    </Type>
-  </Table>
   <Table Name="dbo.Question" Member="Questions">
     <Type Name="Question">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="text" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="QuizID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="Question_Option" Member="Options" ThisKey="Id" OtherKey="QuestionID" Type="Option" />
@@ -27,7 +27,7 @@
   </Table>
   <Table Name="dbo.Quiz" Member="Quizs">
     <Type Name="Quiz">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Score" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="Name" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />

@@ -16,5 +16,10 @@ namespace Assignment3
         {
             InitializeComponent();
         }
+
+        private void Option2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

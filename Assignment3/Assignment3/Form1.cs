@@ -11,15 +11,21 @@ using System.Data.SqlClient;
 
 namespace Assignment3
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
         }
 
         private void btnCreateDatabase_Click(object sender, EventArgs e)
         {
+        }
+
+        private void populateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            QuizDataForm quizForm = new QuizDataForm();
+            quizForm.Show();
         }
     }
 }
