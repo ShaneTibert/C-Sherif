@@ -14,7 +14,7 @@ namespace QuizLibrary
                          where word.Length <= 5
                          select word;
 	    
-	 //Print each word out
+	 //fPrint each word out
 	 foreach (var word in shortWords)
 	 {
 	 	Console.WriteLine(word);
