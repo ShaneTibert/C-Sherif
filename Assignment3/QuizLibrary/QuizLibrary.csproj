@@ -58,6 +58,11 @@
     </Compile>
     <Compile Include="Question.cs" />
     <Compile Include="Quiz.cs" />
+    <Compile Include="QuizDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuizDataSet.xsd</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -69,6 +74,17 @@
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="QuizDataSet.xsc">
+      <DependentUpon>QuizDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QuizDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuizDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QuizDataSet.xss">
+      <DependentUpon>QuizDataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

@@ -8,18 +8,17 @@ namespace QuizLibrary
 {
     class DataAccess
     {
-        private void ConnectDB()
-        {
-
-        }
-        public void loadQuiz()
-        {
-
-        }
-        public Quiz LoadSpecifiedQuiz(string name)
-        {
-            Quiz quiz = new Quiz();
-            return quiz;
-        }
+        string[] quizes;
+        //Get only short words
+        var quiznu = from word in words
+                         where word.Length <= 5
+                         select word;
+	    
+	 //Print each word out
+	 foreach (var word in shortWords)
+	 {
+	 	Console.WriteLine(word);
+	 }
+    Console.ReadLine();
     }
 }

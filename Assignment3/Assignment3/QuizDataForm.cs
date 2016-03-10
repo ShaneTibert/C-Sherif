@@ -21,37 +21,22 @@ namespace Assignment3
         {
             this.Validate();
             this.examineeBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.quizDataSet);
-
-        }
-
-        private void examineeBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.examineeBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.quizDataSet);
+            this.tableAdapterManager.UpdateAll(this.quizDataSet1);
 
         }
 
         private void QuizDataForm_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'quizDataSet.Quiz' table. You can move, or remove it, as needed.
-            this.quizTableAdapter.Fill(this.quizDataSet.Quiz);
-            // TODO: This line of code loads data into the 'quizDataSet.Question' table. You can move, or remove it, as needed.
-            this.questionTableAdapter.Fill(this.quizDataSet.Question);
-            // TODO: This line of code loads data into the 'quizDataSet.Options' table. You can move, or remove it, as needed.
-            this.optionsTableAdapter.Fill(this.quizDataSet.Options);
-            // TODO: This line of code loads data into the 'quizDataSet.Examinee' table. You can move, or remove it, as needed.
-            this.examineeTableAdapter.Fill(this.quizDataSet.Examinee);
+            // TODO: This line of code loads data into the 'quizDataSet1.Question' table. You can move, or remove it, as needed.
+            this.questionTableAdapter.Fill(this.quizDataSet1.Question);
+            // TODO: This line of code loads data into the 'quizDataSet1.Quiz' table. You can move, or remove it, as needed.
+            this.quizTableAdapter.Fill(this.quizDataSet1.Quiz);
+            // TODO: This line of code loads data into the 'quizDataSet1.Examinee' table. You can move, or remove it, as needed.
+            this.examineeTableAdapter.Fill(this.quizDataSet1.Examinee);
 
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
+        private void label4_Click(object sender, EventArgs e)
         {
 
         }
