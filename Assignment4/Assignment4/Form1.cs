@@ -11,6 +11,7 @@ using System.Resources;
 using System.Threading;
 using System.Globalization;
 using CarLib;
+using MyCustomControl;
 
 namespace Assignment4
 {
@@ -19,6 +20,8 @@ namespace Assignment4
         protected CultureInfo culture;
         protected ComponentResourceManager resManager;
         DataAccess db;
+        LengthLimit control = new LengthLimit();
+
         public Form1()
         { 
             InitializeComponent();
@@ -29,6 +32,7 @@ namespace Assignment4
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            control.lengthLimiter += checkLength;
             printDocument1.PrintPage += printDocument1_PrintPage;
             comboBox2.SelectedItem = "C";
         }
@@ -151,6 +155,10 @@ namespace Assignment4
         /// </summary>
         public void searchVIN()
         {
+            if (textBox4.Text == "")
+            {
+                textBox4.Text = "0";
+            }
             IEnumerable<Car> cars = from c in db.car where c.vIN == Int32.Parse(textBox4.Text) && c.type == "C" select c;
             foreach (Car car in cars)
             {
@@ -304,6 +312,40 @@ namespace Assignment4
             }
         }
 
+        public void checkLength(String txt)
+        {
+            if (txt.Length >= 12)
+            {
+                textBox4.BackColor = Color.Red;
+                button1.Enabled = false;
+                button2.Enabled = false;
+                button3.Enabled = false;
+                MessageBox.Show(resManager.GetString("tooMany", Thread.CurrentThread.CurrentUICulture));
+            }
+            else
+            {
+                textBox4.BackColor = Color.White;
+                button1.Enabled = true;
+                button2.Enabled = true;
+                button3.Enabled = true;
+            }
+            /*int result;
+            if (int.TryParse(txt, out result) == false)
+            {
+                MessageBox.Show(resManager.GetString("numOnly", Thread.CurrentThread.CurrentUICulture));
+                textBox4.BackColor = Color.Red;
+                button1.Enabled = false;
+                button2.Enabled = false;
+                button3.Enabled = false;
+            }
+            else
+            {
+                textBox4.BackColor = Color.White;
+                button1.Enabled = true;
+                button2.Enabled = true;
+                button3.Enabled = true;
+            }*/
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -318,6 +360,12 @@ namespace Assignment4
         private void button3_Click(object sender, EventArgs e)
         {
             searchVIN();
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+        //checkLength
+            control.lengthLimiter(textBox4.Text);
         }
     }
 

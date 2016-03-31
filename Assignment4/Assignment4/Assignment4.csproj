@@ -90,6 +90,10 @@
       <Project>{e82c7638-ce0b-479f-88a2-53910a5fda58}</Project>
       <Name>CarLib</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MyCustomControl\MyCustomControl.csproj">
+      <Project>{5d2ae077-803c-4b39-bb3a-04243a828f01}</Project>
+      <Name>MyCustomControl</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

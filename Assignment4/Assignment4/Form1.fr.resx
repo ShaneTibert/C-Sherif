@@ -393,4 +393,13 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Détail de voitures</value>
   </data>
+  <data name="cantFind" xml:space="preserve">
+    <value>Impossible de trouver une automobile avec ce VIN</value>
+  </data>
+  <data name="numOnly" xml:space="preserve">
+    <value>Seuls les nombres d'entrée pour le VIN !</value>
+  </data>
+  <data name="tooMany" xml:space="preserve">
+    <value>Il y a trop de chiffres dans ce Vin ! Max est de 12 !</value>
+  </data>
 </root>
