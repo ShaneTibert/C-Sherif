@@ -13,7 +13,8 @@ namespace CarLib
     public class DataAccess : DataContext
     {
         public Table<Car> car;
-        public DataAccess() : base(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Cars;Integrated Security=True;")
+        public DataAccess()
+            : base(@"Data Source=(localdb)\Projects;Initial Catalog=Car;Integrated Security=True;")
         {
 
         }

@@ -11,7 +11,7 @@ namespace CarLib
     public class Truck : Car
     {
         [Column()]
-        public int axles;
+        public int axels;
         [Column()]
         public int tonnage;
     }

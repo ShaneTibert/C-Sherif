@@ -65,6 +65,7 @@
             // 
             // groupBox1
             // 
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.comboBox2);
             this.groupBox1.Controls.Add(this.label9);
@@ -81,28 +82,29 @@
             this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.textBox1);
-            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
             // 
             // label10
             // 
             resources.ApplyResources(this.label10, "label10");
+            this.label10.ForeColor = System.Drawing.Color.Blue;
             this.label10.Name = "label10";
             // 
             // comboBox2
             // 
+            resources.ApplyResources(this.comboBox2, "comboBox2");
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
             resources.GetString("comboBox2.Items"),
             resources.GetString("comboBox2.Items1"),
             resources.GetString("comboBox2.Items2")});
-            resources.ApplyResources(this.comboBox2, "comboBox2");
             this.comboBox2.Name = "comboBox2";
             // 
             // label9
             // 
             resources.ApplyResources(this.label9, "label9");
+            this.label9.ForeColor = System.Drawing.Color.Red;
             this.label9.Name = "label9";
             // 
             // textBox7
@@ -113,6 +115,7 @@
             // label8
             // 
             resources.ApplyResources(this.label8, "label8");
+            this.label8.ForeColor = System.Drawing.Color.Red;
             this.label8.Name = "label8";
             // 
             // textBox6
@@ -123,6 +126,7 @@
             // label7
             // 
             resources.ApplyResources(this.label7, "label7");
+            this.label7.ForeColor = System.Drawing.Color.DarkTurquoise;
             this.label7.Name = "label7";
             // 
             // textBox5
@@ -133,6 +137,7 @@
             // label6
             // 
             resources.ApplyResources(this.label6, "label6");
+            this.label6.ForeColor = System.Drawing.Color.Blue;
             this.label6.Name = "label6";
             // 
             // textBox4
@@ -143,6 +148,7 @@
             // label5
             // 
             resources.ApplyResources(this.label5, "label5");
+            this.label5.ForeColor = System.Drawing.Color.Blue;
             this.label5.Name = "label5";
             // 
             // textBox3
@@ -153,6 +159,7 @@
             // label4
             // 
             resources.ApplyResources(this.label4, "label4");
+            this.label4.ForeColor = System.Drawing.Color.Blue;
             this.label4.Name = "label4";
             // 
             // textBox2
@@ -163,6 +170,7 @@
             // label3
             // 
             resources.ApplyResources(this.label3, "label3");
+            this.label3.ForeColor = System.Drawing.Color.Blue;
             this.label3.Name = "label3";
             // 
             // textBox1
@@ -205,50 +213,52 @@
             // 
             // languageBox
             // 
+            resources.ApplyResources(this.languageBox, "languageBox");
             this.languageBox.FormattingEnabled = true;
             this.languageBox.Items.AddRange(new object[] {
             resources.GetString("languageBox.Items"),
             resources.GetString("languageBox.Items1")});
-            resources.ApplyResources(this.languageBox, "languageBox");
             this.languageBox.Name = "languageBox";
             this.languageBox.SelectedIndexChanged += new System.EventHandler(this.languageBox_SelectedIndexChanged);
             // 
             // menuStrip1
             // 
+            resources.ApplyResources(this.menuStrip1, "menuStrip1");
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.printingToolStripMenuItem});
-            resources.ApplyResources(this.menuStrip1, "menuStrip1");
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // printingToolStripMenuItem
             // 
+            resources.ApplyResources(this.printingToolStripMenuItem, "printingToolStripMenuItem");
             this.printingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.printPreviewToolStripMenuItem,
             this.printToolStripMenuItem});
             this.printingToolStripMenuItem.Name = "printingToolStripMenuItem";
-            resources.ApplyResources(this.printingToolStripMenuItem, "printingToolStripMenuItem");
             this.printingToolStripMenuItem.Click += new System.EventHandler(this.printingToolStripMenuItem_Click);
             // 
             // printPreviewToolStripMenuItem
             // 
-            this.printPreviewToolStripMenuItem.Name = "printPreviewToolStripMenuItem";
             resources.ApplyResources(this.printPreviewToolStripMenuItem, "printPreviewToolStripMenuItem");
+            this.printPreviewToolStripMenuItem.Name = "printPreviewToolStripMenuItem";
             this.printPreviewToolStripMenuItem.Click += new System.EventHandler(this.printPreviewToolStripMenuItem_Click);
             // 
             // printToolStripMenuItem
             // 
-            this.printToolStripMenuItem.Name = "printToolStripMenuItem";
             resources.ApplyResources(this.printToolStripMenuItem, "printToolStripMenuItem");
+            this.printToolStripMenuItem.Name = "printToolStripMenuItem";
             this.printToolStripMenuItem.Click += new System.EventHandler(this.printToolStripMenuItem_Click);
             // 
             // printPreviewDialog1
             // 
             resources.ApplyResources(this.printPreviewDialog1, "printPreviewDialog1");
+            this.printPreviewDialog1.Document = this.printDocument1;
             this.printPreviewDialog1.Name = "printPreviewDialog1";
             // 
             // printDialog1
             // 
+            this.printDialog1.Document = this.printDocument1;
             this.printDialog1.UseEXDialog = true;
             // 
             // Form1
